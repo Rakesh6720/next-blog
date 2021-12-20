@@ -11,11 +11,11 @@ const DUMMY_POST = [
   },
 ];
 
-function PostContent() {
+function PostContent(props) {
   const imagePath = `/images/posts/${DUMMY_POST[0].slug}/${DUMMY_POST[0].image}`;
   return (
     <>
-      <PostHeader title={DUMMY_POST[0].title} image={imagePath} />
+      <PostHeader title={post.title} image={imagePath} />
       <ReactMarkdown>{DUMMY_POST[0].content}</ReactMarkdown>
     </>
   );
