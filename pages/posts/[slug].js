@@ -1,8 +1,8 @@
 import PostContent from "../../components/posts/post-detail/post-content";
 import { getPostData, getPostsFiles } from "../../lib/post-util";
 
-function PostDetailPage() {
-  return <PostContent />;
+function PostDetailPage(props) {
+  return <PostContent posts={props.post} />;
 }
 
 export function getStaticProps(context) {
@@ -30,13 +30,4 @@ export function getStaticPaths() {
   };
 }
 
-export function getStaticProps() {
-  const allPosts = getPostsFiles();
-
-  return {
-    props: {
-      posts: allPosts,
-    },
-  };
-}
 export default PostDetailPage;
