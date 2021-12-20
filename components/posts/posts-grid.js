@@ -5,7 +5,7 @@ function PostGrid(props) {
   return (
     <ul>
       {posts.map((post) => (
-        <PostItem />
+        <PostItem key={post.slug} post={post} />
       ))}
     </ul>
   );

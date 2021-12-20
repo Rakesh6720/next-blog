@@ -11,9 +11,11 @@ function PostItem(props) {
   });
 
   const imagePath = `/images/posts/${slug}/${image}`;
+  const linkPath = `/posts/${slug}`;
+  
   return (
     <li>
-      <Link>
+      <Link href={linkPath}>
         <a>
           <div>
             <Image src={imagePath} alt={title} width={300} height={200} />
