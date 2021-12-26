@@ -2,6 +2,7 @@ import Image from "next/image";
 
 function PostHeader(props) {
   const { title, image } = props;
+  console.log(image);
   return (
     <header>
       <h1>{title}</h1>
