@@ -1,6 +1,7 @@
 import Image from "next/image";
 import ReactMarkdown from "react-markdown";
-import {} from "react-syntax-highlighter";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { atomDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import PostHeader from "./post-header";
 import classes from "./post-content.module.css";
 
@@ -23,7 +24,7 @@ function PostContent(props) {
 
       if (node.children[0].tagName === "img") {
         const image = node.children[0];
-
+        console.log(image.properties.src);
         return (
           <div className={classes.image}>
             <Image
@@ -39,7 +40,16 @@ function PostContent(props) {
     },
 
     code(code) {
-      return <SyntaxHighlighter language={language} children={children} />;
+      const { className, children } = code;
+      const language = className.split("-")[1]; // className is something like language-js => We need the "js" part here
+
+      return (
+        <SyntaxHighlighter
+          style={atomDark}
+          language={language}
+          children={children}
+        />
+      );
     },
   };
   return (
