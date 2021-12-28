@@ -9,7 +9,12 @@ module.exports = {
       // by next.js will be dropped. Doesn't make much sense, but how it is
       fs: false, // the solution
     };
-
     return config;
+  },
+  env: {
+    mongodb_username: "Rakesh6720",
+    mongodb_password: "MongoGopackers1",
+    mongodb_clustername: "cluster1",
+    mongodb_database: "my-site",
   },
 };
